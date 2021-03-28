@@ -4,10 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "demo-instance" {
   # colocar todos los parametros aqui 
-  ami = "ami-08962a4068733a2b6"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "practica1"
-    Environment = "Dev"
-  }
+  ami = var.ami_id
+  instance_type = var.instance_type
+  tags = var.tags
 }
